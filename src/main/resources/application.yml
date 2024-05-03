@@ -2,7 +2,7 @@ server:
   port: 8070
 
 jwt:
-  secret: 49c8b2a8b5b27adee4d0596714bd8792a92b2ac81cbb175141bc82d9ca2b3065
+  secret: cc29adf4e7f1f44ce6593487a7d4fc3a710e158fe6def24e8bfc629e4f349250
 
 eureka:
   client:

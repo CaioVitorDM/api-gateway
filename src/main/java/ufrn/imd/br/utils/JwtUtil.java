@@ -17,14 +17,15 @@ public class JwtUtil {
     private String secret;
 
     public Map<String, Claim> getAllClaimsFromToken(String token){
-        return JWT.require(Algorithm.HMAC256(Base64.getDecoder().decode(secret)))
+        return JWT.require(Algorithm.HMAC384(Base64.getUrlDecoder().decode(secret)))
                 .build().verify(token).getClaims();
     }
 
     private boolean isTokenExpired(String token) throws Exception{
-        return JWT.require(Algorithm.HMAC256(Base64.getDecoder().decode(secret)))
+        return JWT.require(Algorithm.HMAC384(Base64.getUrlDecoder().decode(secret)))
                 .build().verify(token).getExpiresAt().before(new Date());
     }
+
 
     public boolean isInvalid(String token) throws Exception{
         return this.isTokenExpired(token);

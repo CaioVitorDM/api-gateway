@@ -11,6 +11,7 @@ public class RouterValidator {
 
     public static final List<String> endpoits = List.of(
             "/api/auth-server/v1/auth/authenticate",
+            "/api/auth-server/v1/users/register",
             "/api/auth-server/v1/auth/refresh-token",
             "/api/auth-server/v1/recover-password",
             "/api/auth-server/v1/recover-password/send-code",

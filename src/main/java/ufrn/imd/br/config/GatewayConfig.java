@@ -30,6 +30,7 @@ public class GatewayConfig {
                         .filters(f -> f.filter(authenticationFilter))
                         .uri("lb://ms-protocols"))
                 .route("ms-exams", r -> r.path("/api/exams/**")
+                        .filters(f -> f.filter(authenticationFilter))
                         .uri("lb://ms-exams"))
                 .build();
     }
